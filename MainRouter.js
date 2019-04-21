@@ -34,7 +34,7 @@ class NavigationDrawerStructure extends Component {
         <TouchableOpacity onPress={this.toggleDrawer.bind(this)}>
           {/*Donute Button Image */}
           <Image
-            source={this.drawerLogo}
+            source={drawerLogo}
             style={{ width: 25, height: 25, marginLeft: 5 }}
           />
         </TouchableOpacity>
