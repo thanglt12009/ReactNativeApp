@@ -105,7 +105,7 @@ export default class Home extends React.Component {
                   onPress={() => onLoadMore()}>
                   <View style={[styles.row, { height: 20 }]}>
                     <Text
-                      style={{ fontWeight: 'bold', fontSize: 16, color: color.SILVER }}>
+                      style={{ fontWeight: 'bold', fontSize: 16, color: color.WHITE }}>
                       {loading ? null : 'Load more'}
                     </Text>
                     {loading ? <ActivityIndicator /> : null}

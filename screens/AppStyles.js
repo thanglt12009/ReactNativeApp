@@ -21,12 +21,12 @@ export default StyleSheet.create({
     width: 40
   },
   header: {
-    backgroundColor: color.TORCH_RED
+    backgroundColor: color.WHITE
   },
   body: {
     flex: 1,
-    paddingTop: 20,
-    backgroundColor: color.TORCH_RED
+    //paddingTop: 20, 
+    backgroundColor: color.WHITE
   },
   row: {
     alignItems: 'center',
@@ -39,18 +39,16 @@ export default StyleSheet.create({
     paddingBottom: 10
   },
   itemRow: {
-    flexDirection: 'row',
-    paddingTop: 10,
+    flexDirection: 'row',    
     padding: 2,
-
     // marginTop: 1,
-    backgroundColor: 'rgb(223,223,223)',
+    backgroundColor: color.WHITE,
     // justifyContent: 'space-between',
     alignItems: 'flex-start',
     flexWrap: 'wrap'
   },
   itemSubRow: {
-    backgroundColor: 'rgb(223,223,223)',
+    backgroundColor: color.WHITE,
     justifyContent: 'space-around',
     flexDirection: 'row',
     borderBottomWidth: 1,

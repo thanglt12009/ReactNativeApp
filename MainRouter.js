@@ -2,13 +2,7 @@
 import React, { Component } from 'react';
 //import react in our code.
 import { View, Image, TouchableOpacity } from 'react-native';
-// import all basic components
-
-//For React Navigation 2.+ import following
-//import {DrawerNavigator, StackNavigator} from 'react-navigation';
-
-//For React Navigation 3.+ import following
-import drawerLogo from "./image/drawer.png";
+import sideIcon from "./image/drawer.png";
 import {
   createDrawerNavigator,
   createStackNavigator,
@@ -21,12 +15,13 @@ import Screen1 from './screens/Screen1';
 import Screen2 from './screens/Screen2';
 import Screen3 from './screens/Screen3';
 import Login from './screens/Login';
+import Logout from './StartApp';
 
 class NavigationDrawerStructure extends Component {
   //Structure for the navigatin Drawer
   toggleDrawer = () => {
     //Props to open/close the drawer
-    this.props.navigationProps.toggleDrawer();
+    this.props.navigationProps.toggleDrawer();    
   };
   render() {
     return (
@@ -34,7 +29,7 @@ class NavigationDrawerStructure extends Component {
         <TouchableOpacity onPress={this.toggleDrawer.bind(this)}>
           {/*Donute Button Image */}
           <Image
-            source={drawerLogo}
+            source={sideIcon}
             style={{ width: 25, height: 25, marginLeft: 5 }}
           />
         </TouchableOpacity>
@@ -43,29 +38,6 @@ class NavigationDrawerStructure extends Component {
   }
 }
 
-//For React Navigation 2.+ need to use StackNavigator instead createStackNavigator
-//const FirstActivity_StackNavigator = StackNavigator({
-
-//For React Navigation 3.+
-const FirstActivity_StackNavigator = createStackNavigator({
-  //All the screen from the Screen1 will be indexed here
-  First: {
-    screen: Screen1,
-    navigationOptions: ({ navigation }) => ({
-      title: 'Screen 1',
-      headerLeft: <NavigationDrawerStructure navigationProps={navigation} />,
-      headerStyle: {
-        backgroundColor: '#FF9800',
-      },
-      headerTintColor: '#fff',
-    }),
-  },
-});
-
-//For React Navigation 2.+ need to use StackNavigator instead createStackNavigator
-//const FirstActivity_StackNavigator = StackNavigator({
-
-//For React Navigation 3.+
 const Screen2_StackNavigator = createStackNavigator({
   //All the screen from the Screen2 will be indexed here
   Second: {
@@ -82,37 +54,13 @@ const Screen2_StackNavigator = createStackNavigator({
   },
 });
 
-//For React Navigation 2.+ need to use StackNavigator instead createStackNavigator
-//const FirstActivity_StackNavigator = StackNavigator({
-
-//For React Navigation 3.+
-const Screen3_StackNavigator = createStackNavigator({
-  //All the screen from the Screen3 will be indexed here
-  Third: {
-    screen: Screen3,
-    navigationOptions: ({ navigation }) => ({
-      title: 'Screen 3',
-      headerLeft: <NavigationDrawerStructure navigationProps={navigation} />,
-      headerStyle: {
-        backgroundColor: '#FF9800',
-      },
-      headerTintColor: '#fff',
-    }),
-  },
-});
-
-const Login_StackNavigator = createStackNavigator({
-  //All the screen from the Screen3 will be indexed here
-  Third: {
+const Logout_StackNavigator = createStackNavigator({
+  //All the screen from the Screen2 will be indexed here
+  Logout: {
     screen: Login,
-    navigationOptions: ({ navigation }) => ({
-      title: 'Login',
-      headerLeft: <NavigationDrawerStructure navigationProps={navigation} />,
-      headerStyle: {
-        backgroundColor: '#FF9800',
-      },
-      headerTintColor: '#fff',
-    }),
+    navigationOptions: {
+      header: null,
+    },
   },
 });
 
@@ -124,91 +72,76 @@ const Home_StackNavigator = createStackNavigator({
       title: 'Home',
       headerLeft: <NavigationDrawerStructure navigationProps={navigation} />,
       headerStyle: {
-        backgroundColor: '#FF9800',
+        backgroundColor: '#00b5ec', 
       },
       headerTintColor: '#fff',
     }),
   },
 });
 
-//For React Navigation 2.+ need to use DrawerNavigator instead createDrawerNavigator
-//const DrawerNavigatorExample = DrawerNavigator({
-
 //For React Navigation 3.+
 export const DrawerNavigatorExample = createDrawerNavigator({
   //Drawer Optons and indexing
- 
+ //https://img.icons8.com/color/48/000000/exit.png
   Home: {
     //Title
     screen: Home_StackNavigator,
     navigationOptions: {
       drawerLabel: 'Home',
+      drawerIcon: ({ tintColor }) => (
+        <Image
+         source={{uri: 'https://img.icons8.com/ultraviolet/40/000000/home.png'}}
+          resizeMode="contain"
+          style={{ width: 20, height: 20,}}
+        />
+      )
     },
   },
 
-  Screen1: {
-    //Title
-    screen: FirstActivity_StackNavigator,
-    navigationOptions: {
-      drawerLabel: 'Demo Screen 1',
-    },
-  },
-
-  Screen2: {
+  LabelOne: {
     //Title
     screen: Screen2_StackNavigator,
     navigationOptions: {
-      drawerLabel: 'Demo Screen 2',
+      drawerLabel: 'Label One',
+      drawerIcon: ({ tintColor }) => (
+        <Image
+         source={{uri: 'https://img.icons8.com/ultraviolet/40/000000/tag-window.png'}}
+          resizeMode="contain"
+          style={{ width: 20, height: 20, }}
+        />
+      )
     },
   },
 
-  Screen3: {
+  LabelTwo: {
     //Title
-    screen: Screen3_StackNavigator,
+    screen: Screen2_StackNavigator,
     navigationOptions: {
-      drawerLabel: 'Demo Screen 3',
+      drawerLabel: 'Label Two',
+      drawerIcon: ({ tintColor }) => (
+        <Image
+         source={{uri: 'https://img.icons8.com/ultraviolet/40/000000/tag-window.png'}}
+          resizeMode="contain"
+          style={{ width: 20, height: 20, }}
+        />
+      )
     },
   },
+  Logout: {
+    //Title
+    screen: Logout_StackNavigator,
+    navigationOptions: {
+      drawerLabel: 'Logout',
+      drawerIcon: ({ tintColor }) => (
+        <Image
+         source={{uri: 'https://img.icons8.com/ultraviolet/40/000000/exit.png'}}
+          resizeMode="contain"
+          style={{ width: 20, height: 20, }}
+        />
+      )
+    },
+  },
+ 
 });
-
-//For React Navigation 2.+ need to export App only
-//export default DrawerNavigatorExample;
-//For React Navigation 3.+
-
-
-// export const createRootNavigator = (signedIn = false) => {
-
-//   return createSwitchNavigator(
-//     {
-//       Login: {
-//         screen: DrawerNavigatorExample
-//       },      
-//     },
-//   );
-// };
-
-
-// export  class App extends React.Component {
-//   constructor(props) {
-//     super(props);
-
-//     this.state = {
-//       signedIn: false,
-//       checkedSignIn: false
-//     };
-//   }
-
-//   componentDidMount() {
-//     isSignedIn()
-//       .then(res => this.setState({ signedIn: res, checkedSignIn: true }))
-//       .catch(err => alert("An error occurred"));
-//   }
-
-//   render() {
-    
-//     const Layout = createRootNavigator(true);
-//     return <Layout />;
-//   }
-// }
 
 export default createAppContainer(DrawerNavigatorExample);
