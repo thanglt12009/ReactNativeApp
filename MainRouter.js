@@ -47,6 +47,22 @@ const Screen2_StackNavigator = createStackNavigator({
       headerLeft: <NavigationDrawerStructure navigationProps={navigation} />,
 
       headerStyle: {
+        backgroundColor: '#00b5ec', 
+      },
+      headerTintColor: '#fff',
+    }),
+  },
+});
+
+const Screen1_StackNavigator = createStackNavigator({
+  //All the screen from the Screen2 will be indexed here
+  Second: {
+    screen: Screen1,
+    navigationOptions: ({ navigation }) => ({
+      title: 'Screen 2',
+      headerLeft: <NavigationDrawerStructure navigationProps={navigation} />,
+
+      headerStyle: {
         backgroundColor: '#FF9800',
       },
       headerTintColor: '#fff',
@@ -100,7 +116,7 @@ export const DrawerNavigatorExample = createDrawerNavigator({
 
   LabelOne: {
     //Title
-    screen: Screen2_StackNavigator,
+    screen: Screen1_StackNavigator,
     navigationOptions: {
       drawerLabel: 'Label One',
       drawerIcon: ({ tintColor }) => (
