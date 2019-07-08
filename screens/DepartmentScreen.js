@@ -20,11 +20,14 @@ import { Button } from 'react-native';
      
      return (
        <KeyboardAvoidingView style={styles.container} behavior="padding">
-       <View>               
-         <Button onPress={this._submit} title="Accounts Team" style={styles.loginButton}  accessibilityLabel="Accounts Team" />
-         <Button onPress={this._submit} title="Human Resource Team" style={styles.loginButton}  accessibilityLabel="Human Resource Team" />
-         <Button onPress={this._submit} title="Development Team" style={styles.loginButton}  accessibilityLabel="Development Team" />
-         <Button onPress={this._submit} title="Quality Control Team" style={styles.loginButton}  accessibilityLabel="Quality Control Team" />
+        <View style={styles.buttonContainer}>     
+          <Text style={styles.heading}>Select Team</Text>
+        </View>
+       <View style={styles.buttonContainer}>               
+         <Button onPress={this._submit} style={styles.button} title="Accounts Team" style={styles.loginButton}  accessibilityLabel="Accounts Team" />
+         <Button onPress={this._submit} style={styles.button} title="Human Resource Team" style={styles.loginButton}  accessibilityLabel="Human Resource Team" />
+         <Button onPress={this._submit} style={styles.button} title="Development Team" style={styles.loginButton}  accessibilityLabel="Development Team" />
+         <Button onPress={this._submit} style={styles.button} title="Quality Control Team" style={styles.loginButton}  accessibilityLabel="Quality Control Team" />
        </View>
        </KeyboardAvoidingView>
      );
@@ -40,11 +43,15 @@ const styles = StyleSheet.create({
     paddingBottom: 2,
     padding: 8,
   },
+  heading: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    textAlign: 'center'
+  },
   container: {
-    flex: 1,
-    paddingTop: 40,
+    flex: 1,    
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'center',    
   },
   touchable: {
     borderWidth: 1,
@@ -60,4 +67,9 @@ const styles = StyleSheet.create({
     padding: 8,
     width: '95%',
   },
+  buttonContainer: {
+    height:45,    
+    width:250,
+    borderRadius:30,
+  }
 });
