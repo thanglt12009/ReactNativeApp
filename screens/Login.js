@@ -24,7 +24,7 @@ export default class LoginView extends Component {
     const {navigate} = this.props.navigation;
     if(this.state.UserName =="admin" && this.state.Password=="admin")
     {      
-      this.props.navigation.navigate("Home");
+      this.props.navigation.navigate("TeamSelectPage");
     }
     else 
     {
@@ -39,7 +39,7 @@ export default class LoginView extends Component {
 
     if(this.state.UserName =="admin" && this.state.Password=="admin")
     {      
-      this.props.navigation.navigate("Home");
+      this.props.navigation.navigate("TeamSelectPage");
     }
     else 
     {

@@ -54,6 +54,22 @@ const Screen2_StackNavigator = createStackNavigator({
   },
 });
 
+const Screen3_StackNavigator = createStackNavigator({
+  //All the screen from the Screen2 will be indexed here
+  Second: {
+    screen: Screen3,
+    navigationOptions: ({ navigation }) => ({
+      title: 'Screen 2',
+      headerLeft: <NavigationDrawerStructure navigationProps={navigation} />,
+
+      headerStyle: {
+        backgroundColor: '#00b5ec', 
+      },
+      headerTintColor: '#fff',
+    }),
+  },
+});
+
 const Screen1_StackNavigator = createStackNavigator({
   //All the screen from the Screen2 will be indexed here
   Second: {
@@ -134,6 +150,21 @@ export const DrawerNavigatorExample = createDrawerNavigator({
     screen: Screen2_StackNavigator,
     navigationOptions: {
       drawerLabel: 'Label Two',
+      drawerIcon: ({ tintColor }) => (
+        <Image
+         source={{uri: 'https://img.icons8.com/ultraviolet/40/000000/tag-window.png'}}
+          resizeMode="contain"
+          style={{ width: 20, height: 20, }}
+        />
+      )
+    },
+  },  
+
+  SickLeave: {
+    //Title
+    screen: Screen3_StackNavigator,
+    navigationOptions: {
+      drawerLabel: 'Sick Leave',
       drawerIcon: ({ tintColor }) => (
         <Image
          source={{uri: 'https://img.icons8.com/ultraviolet/40/000000/tag-window.png'}}
