@@ -7,7 +7,8 @@ import {
   Button,
   TouchableHighlight,
   Image,
-  Alert
+  Alert,
+  ImageBackground 
 } from 'react-native';
 
 export default class LoginView extends Component {
@@ -51,8 +52,9 @@ export default class LoginView extends Component {
   };
 
   render() {
-    return (
-      <View style={styles.container}>
+    return (      
+      <ImageBackground source={'/assets/BG.png'} style={styles.backgroundImage} >
+      <View style={styles.container}>      
         <View style={styles.inputContainer}>
           <Image style={styles.inputIcon} source={{uri: 'https://png.icons8.com/message/ultraviolet/50/3498db'}}/>
           <TextInput style={styles.inputs}
@@ -74,16 +76,22 @@ export default class LoginView extends Component {
           <Text style={styles.loginText}>Login</Text>
         </TouchableHighlight>
       </View>
+       </ImageBackground>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
+  backgroundImage: {
     flex: 1,
+    width: null,
+    height: null,
+},
+  container: {    
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#DCDCDC',
+    flex:1
   },
   inputContainer: {
       borderBottomColor: '#F5FCFF',
