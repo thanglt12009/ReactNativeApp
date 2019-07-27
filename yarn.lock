@@ -1162,6 +1162,11 @@ ajv@^6.1.0:
     json-schema-traverse "^0.4.1"
     uri-js "^4.2.2"
 
+android@^0.0.8:
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/android/-/android-0.0.8.tgz#a5b03de920d7437a34ccecee5ee127ef1e4495a9"
+  integrity sha1-pbA96SDXQ3o0zOzuXuEn7x5Elak=
+
 ansi-colors@^1.0.1:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/ansi-colors/-/ansi-colors-1.1.0.tgz#6374b4dd5d4718ff3ce27a671a3b1cad077132a9"
@@ -2314,7 +2319,7 @@ cosmiconfig@^5.0.5:
     js-yaml "^3.13.0"
     parse-json "^4.0.0"
 
-create-react-class@^15.6.0, create-react-class@^15.6.3:
+create-react-class@^15.6.0, create-react-class@^15.6.2, create-react-class@^15.6.3:
   version "15.6.3"
   resolved "https://registry.yarnpkg.com/create-react-class/-/create-react-class-15.6.3.tgz#2d73237fb3f970ae6ebe011a9e66f46dbca80036"
   integrity sha512-M+/3Q6E6DLO6Yx3OwrWjwHBnvfXXYA7W+dFjt/ZDBemHO1DDZhsalX/NUtnTYclN6GfnBDRh4qRHjcDHmlJBJg==
@@ -4938,6 +4943,11 @@ path-type@^2.0.0:
   dependencies:
     pify "^2.0.0"
 
+paths-js@^0.4.7:
+  version "0.4.9"
+  resolved "https://registry.yarnpkg.com/paths-js/-/paths-js-0.4.9.tgz#dc926a7b35fee91bdfa7f984db904a697d8a57c0"
+  integrity sha512-bu3iCT1D/0yfIBwlw8y07Ggf4k8j1BzKtwcrQqk0XSMCJxYPJpNbSkgNPU8c63HchinmFY+vqEp/P+9oiBZZhA==
+
 pegjs@0.9.0:
   version "0.9.0"
   resolved "https://registry.yarnpkg.com/pegjs/-/pegjs-0.9.0.tgz#f6aefa2e3ce56169208e52179dfe41f89141a369"
@@ -5022,6 +5032,11 @@ plugin-error@^0.1.2:
     arr-diff "^1.0.1"
     arr-union "^2.0.1"
     extend-shallow "^1.1.2"
+
+point-in-polygon@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/point-in-polygon/-/point-in-polygon-1.0.1.tgz#d59b64e8fee41c49458aac82b56718c5957b2af7"
+  integrity sha1-1Ztk6P7kHElFiqyCtWcYxZV7Kvc=
 
 posix-character-classes@^0.1.0:
   version "0.1.1"
@@ -5204,6 +5219,15 @@ react-native-branch@2.2.5:
   resolved "https://registry.yarnpkg.com/react-native-branch/-/react-native-branch-2.2.5.tgz#4074dd63b4973e6397d9ce50e97b57c77a518e9d"
   integrity sha1-QHTdY7SXPmOX2c5Q6XtXx3pRjp0=
 
+react-native-chart-kit@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/react-native-chart-kit/-/react-native-chart-kit-3.0.1.tgz#01cec01bf85dd6016a43abaa8cce71e0a5bc23be"
+  integrity sha512-Pdw8stdzb2eAQ6IotR21BCthGX7b5CMaZHBteVSK8eea40rDq73PZIJ9KNeUemv+1ksm7E3pjVD4AWdle1q8rw==
+  dependencies:
+    lodash "^4.17.11"
+    paths-js "^0.4.7"
+    point-in-polygon "^1.0.1"
+
 react-native-datepicker@^1.7.2:
   version "1.7.2"
   resolved "https://registry.yarnpkg.com/react-native-datepicker/-/react-native-datepicker-1.7.2.tgz#58d0822591a0ac9b32aba082650222a0ee29669d"
@@ -5247,6 +5271,15 @@ react-native-screens@1.0.0-alpha.22, "react-native-screens@^1.0.0 || ^1.0.0-alph
   version "1.0.0-alpha.22"
   resolved "https://registry.yarnpkg.com/react-native-screens/-/react-native-screens-1.0.0-alpha.22.tgz#7a120377b52aa9bbb94d0b8541a014026be9289b"
   integrity sha512-kSyAt0AeVU6N7ZonfV6dP6iZF8B7Bce+tk3eujXhzBGsLg0VSLnU7uE9VqJF0xdQrHR91ZjGgVMieo/8df9KTA==
+
+react-native-scrollable-tab-view@^0.10.0:
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/react-native-scrollable-tab-view/-/react-native-scrollable-tab-view-0.10.0.tgz#8ce7908254685ee37d35df7d849676eaa1e81132"
+  integrity sha512-7FWw9X2hLozWqpGJTAU/p7ONdTTO635bbAZ5AUPDrB4JwaLbhNV6ePjsNUjsCaopgCwz/EdmH0hTCPeja9dh4w==
+  dependencies:
+    create-react-class "^15.6.2"
+    prop-types "^15.6.0"
+    react-timer-mixin "^0.13.3"
 
 react-native-sqlite-storage@^3.3.10:
   version "3.3.10"
@@ -5391,7 +5424,7 @@ react-proxy@^1.1.7:
     lodash "^4.6.1"
     react-deep-force-update "^1.0.0"
 
-react-timer-mixin@^0.13.2:
+react-timer-mixin@^0.13.2, react-timer-mixin@^0.13.3:
   version "0.13.4"
   resolved "https://registry.yarnpkg.com/react-timer-mixin/-/react-timer-mixin-0.13.4.tgz#75a00c3c94c13abe29b43d63b4c65a88fc8264d3"
   integrity sha512-4+ow23tp/Tv7hBM5Az5/Be/eKKF7DIvJ09voz5LyHGQaqqz9WV8YMs31eFvcYQs7d451LSg7kDJV70XYN/Ug/Q==

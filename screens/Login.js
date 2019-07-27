@@ -22,7 +22,7 @@ export default class LoginView extends Component {
   }
 
   onClickListener = () => {
-    const {navigate} = this.props.navigation;
+    
     if(this.state.UserName =="admin" && this.state.Password=="admin")
     {      
       this.props.navigation.navigate("TeamSelectPage");
@@ -36,7 +36,6 @@ export default class LoginView extends Component {
   }
 
   _submit = () => {
-    const {navigate} = this.props.navigation;
 
     if(this.state.UserName =="admin" && this.state.Password=="admin")
     {      

@@ -3,19 +3,15 @@ import React, { Component } from 'react';
 //import react in our code.
 import { View, Image, TouchableOpacity } from 'react-native';
 import sideIcon from "./image/drawer.png";
-import {
-  createDrawerNavigator,
-  createStackNavigator,
-  createAppContainer,
-} from 'react-navigation';
-
+import {  createDrawerNavigator,  createStackNavigator,  createAppContainer,} from 'react-navigation';
 import Home from './screens/Home';
 import HomeContainer from './screens/HomeContainer';
 import Screen1 from './screens/Screen1';
 import Screen2 from './screens/Screen2';
 import Screen3 from './screens/Screen3';
 import Login from './screens/Login';
-import Logout from './StartApp';
+import ScanQR from './screens/ScanQR';
+import ChartScreen from './screens/chartScreen';
 
 class NavigationDrawerStructure extends Component {
   //Structure for the navigatin Drawer
@@ -70,6 +66,22 @@ const Screen3_StackNavigator = createStackNavigator({
   },
 });
 
+const ScanQR_StackNavigator = createStackNavigator({
+  //All the screen from the Screen2 will be indexed here
+  Second: {
+    screen: ScanQR,
+    navigationOptions: ({ navigation }) => ({
+      title: 'Screen 2',
+      headerLeft: <NavigationDrawerStructure navigationProps={navigation} />,
+
+      headerStyle: {
+        backgroundColor: '#00b5ec', 
+      },
+      headerTintColor: '#fff',
+    }),
+  },
+});
+
 const Screen1_StackNavigator = createStackNavigator({
   //All the screen from the Screen2 will be indexed here
   Second: {
@@ -110,6 +122,23 @@ const Home_StackNavigator = createStackNavigator({
     }),
   },
 });
+
+const Chart_StackNavigator = createStackNavigator({
+  //All the screen from the Screen3 will be indexed here
+  Third: {
+    screen: ChartScreen,
+    navigationOptions: ({ navigation }) => ({
+      title: 'Home',
+      headerLeft: <NavigationDrawerStructure navigationProps={navigation} />,
+      headerStyle: {
+        backgroundColor: '#00b5ec', 
+      },
+      headerTintColor: '#fff',
+    }),
+  },
+});
+
+
 
 //For React Navigation 3.+
 export const DrawerNavigatorExample = createDrawerNavigator({
@@ -174,6 +203,37 @@ export const DrawerNavigatorExample = createDrawerNavigator({
       )
     },
   },
+  Charts: {
+    //Title
+    screen: Chart_StackNavigator,
+    navigationOptions: {
+      drawerLabel: 'SCAN QR',
+      drawerIcon: ({ tintColor }) => (
+        <Image
+         source={{uri: 'https://img.icons8.com/ultraviolet/40/000000/tag-window.png'}}
+          resizeMode="contain"
+          style={{ width: 20, height: 20, }}
+        />
+      )
+    },
+  },
+
+  ScanQR: {
+    //Title
+    screen: ScanQR_StackNavigator,
+    navigationOptions: {
+      drawerLabel: 'SCAN QR',
+      drawerIcon: ({ tintColor }) => (
+        <Image
+         source={{uri: 'https://img.icons8.com/ultraviolet/40/000000/tag-window.png'}}
+          resizeMode="contain"
+          style={{ width: 20, height: 20, }}
+        />
+      )
+    },
+  },
+
+
   Logout: {
     //Title
     screen: Logout_StackNavigator,
