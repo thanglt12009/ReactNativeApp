@@ -1,0 +1,10 @@
+how to install Dev Env
+
+1)yarn add expo-cli
+2)yarn add react-native-chart-kit
+3)yarn add react-native-datepicker
+4)yarn add react-native-scrollable-tab-view
+5)yarn add react-native-sqlite-storage
+6)yarn add react-native-swipeout
+7)yarn add react-navigation
+
