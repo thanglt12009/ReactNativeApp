@@ -2,7 +2,7 @@ import * as React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import LoginScreen from "./screens/Login";
 import HomeScreen from './MainRouter';
-import HomeScreen2 from './RootDrawer'
+//import HomeScreen2 from './RootDrawer'
 import TeamSelectScreen from './screens/DepartmentScreen';
 import { createStackNavigator, createAppContainer } from "react-navigation";
 
@@ -14,7 +14,7 @@ const AppNavigator = createStackNavigator({
     },
   },
   Home: {
-    screen:HomeScreen2,
+    screen:HomeScreen,
     navigationOptions:{
       header:null,
     },
